@@ -20,5 +20,13 @@ const quizzes = {
     "webg2": {
         title: "La matière de Webg2",
         description: "Testez vos connaissances sur le cours de webg2",
-    },
+    }
+
 };
+
+function displayIdQuizz(param) {
+    for (const idQuizz in param) {
+        const quizz = param[idQuizz];
+        console.log(quizz);
+    }
+}
