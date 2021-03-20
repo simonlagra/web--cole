@@ -1,0 +1,17 @@
+body{
+    background-color: cyan;
+}
+
+.title{
+    font-family: Comic Sans MS;
+    font-size: 5em;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
