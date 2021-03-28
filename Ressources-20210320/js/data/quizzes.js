@@ -30,3 +30,13 @@ function displayIdQuizz(param) {
         console.log(quizz);
     }
 }
+
+function fillSelect() {
+    for (const idQuizz in quizzes) {
+        const quizz = quizzes[idQuizz].title;
+        var monSelect = document.getElementById("select");
+        var monOption = document.createElement("option");
+        monOption.text = quizz;
+        monSelect.add(monOption);
+    }
+}

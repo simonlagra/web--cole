@@ -12,6 +12,23 @@ footer{
     text-align: center;
 }
 
+.corps{
+    text-align: center;
+    background-color: blue;
+}
+
+form{
+    text-align: center;
+}
+
+button{
+    width: 150px;
+    height: 60px;
+    border-radius: 50px;
+    border: solid;
+    text-align: center;
+    margin: 25px;
+}
 main{
     text-align: center;
 }

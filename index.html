@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Quizz ESI Simon La Grange 53037</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="quizz.css" />
-    <script src="Ressources-20210320/js/data/quizzes.js"></script>
-</head>
-<body>
-    <header>
-        <div class="title">
-            Quizz ESI Simon La Grange 53037
-        </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Quizz ESI Simon La Grange 53037</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="quizz.css" />
+        <script src="Ressources-20210320/js/data/quizzes.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                Quizz ESI Simon La Grange 53037
+            </div>
 
-    </header>
-    <main>
-        <form>
-            <label for="choice">
-                test
-            </label>
-            <select name="choice" id="choice">
+        </header>
+        <main>
+            <form>
+                <select id="select">
 
-            </select>
-        </form>
-    </main>
-    <footer>
-        <h3>Simon La Grange; 53037; D121; Nicolas Vansteenkiste (NVS)</h3>
-    </footer>
-</body>
+                </select>
+            </form>
+            <script>
+                $(document).ready(fillSelect());
+            </script>
+
+
+            <button id="but">Commencer</button>
+        </main>
+        <footer>
+            <h3>Simon La Grange - 53037 - D121 - Nicolas Vansteenkiste (NVS)</h3>
+        </footer>
+    </body>
 </html>
