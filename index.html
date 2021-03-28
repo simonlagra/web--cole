@@ -2,33 +2,59 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Quizz ESI Simon La Grange 53037</title>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="style/style.css" />
-        <script src="Ressources-20210320/js/data/quizzes.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script src="js/jquery.min.1.7.2.js" defer></script>
+        <script src="js/materialize.min.js" defer></script>
+
+        <script src="js/quizzes.js" defer></script>
     </head>
     <body>
         <header>
-            <div class="title">
-                Quizz ESI Simon La Grange 53037
-            </div>
-
+            <nav>
+                <div class="nav-wrapper blue lighten-1">
+                    <a href="#" class="brand-logo center">Quizz ESI Simon La Grange 53037</a>
+                    
+                </div>
+            </nav>
         </header>
         <main>
-            <form>
-                <select id="select">
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <form id="quizz_form" action="quizz.html">
+                            <select id="select" name="quizz_id">
+                                <!-- <option value="" disabled selected>Choose your option</option> -->
+                            </select>
 
-                </select>
-            </form>
-            <script>
-                $(document).ready(fillSelect());
-            </script>
-            <button id="but" onclick="location.href='quizz.html'">Commencer</button>
+                            <button id="button" class="btn waves-effect waves-light">Commencer<i class="material-icons right">send</i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
         </main>
-        <footer>
-            <h3>Simon La Grange - 53037 - D121 - Nicolas Vansteenkiste (NVS)</h3>
+        <footer class="page-footer blue lighten-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col s8 offset-s2">
+                    <p class="grey-text text-lighten-4 center">Simon La Grange - 53037 - D121 - Nicolas Vansteenkiste (NVS)</p>
+                    </div>                
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">© 2021 Copyright Simon La Grange
+                    <a class="grey-text text-lighten-4 right" href="https://git.esi-bru.be/webg2-etd/2021/projet2/webg2-projet2-53037">GitLab du projet</a>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

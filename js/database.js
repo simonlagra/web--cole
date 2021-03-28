@@ -1,9 +1,3 @@
-"use strict";
-
-/**
- * Informations diverses sur les quiz.
- * @type{Record<string, Quiz>}
- */
 const quizzes = {
     "mer": {
         title: "Les animaux marins dans les dessins animés",
@@ -23,20 +17,3 @@ const quizzes = {
     }
 
 };
-
-function displayIdQuizz(param) {
-    for (const idQuizz in param) {
-        const quizz = param[idQuizz];
-        console.log(quizz);
-    }
-}
-
-function fillSelect() {
-    for (const idQuizz in quizzes) {
-        const quizz = quizzes[idQuizz].title;
-        var monSelect = document.getElementById("select");
-        var monOption = document.createElement("option");
-        monOption.text = quizz;
-        monSelect.add(monOption);
-    }
-}
