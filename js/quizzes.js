@@ -24,7 +24,31 @@
             description: "Testez vos connaissances sur le cours de webg2",
         }
 
-    };
+    }
+
+    let indexjs = () => {
+        console.log('index')
+        fillSelect()
+
+        $('select').formSelect()
+    }
+
+    let quizzjs = () => {
+        console.log('quizz')
+
+        let quizz_id = new URL(location.href).searchParams.get('quizz_id')
+        
+        timer(3000, () => { console.log(true)})
+    }
+
+    const router = {
+        index : indexjs,
+        quizz : quizzjs
+    }
+
+    let parse_router = (id) => {
+        router?.[id]()
+    }
 
     let getQuizzTitle = (id) => {
         console.log(quizzes?.[id]?.title)
@@ -45,16 +69,24 @@
         }
     }
 
-    // function fillSelect() {
-    //     for (const idQuizz in quizzes) {
-    //         const quizz = quizzes[idQuizz].title;
-    //         var monSelect = document.getElementById("select");
-    //         var monOption = document.createElement("option");
-    //         monOption.text = quizz;
-    //         monSelect.add(monOption);
-    //     }
-    // }
+    let fillSelect = () => {
 
-    // $('#quizz_form') ? (fillSelect(), $('select').formSelect()) : null
+        for(let key in quizzes) {
+            $('<option/>', {id : `option-${key}`, value: key, text: quizzes[key].title}).appendTo($('#select'));
+        }
+
+        // for (const idQuizz in quizzes) {
+        //     const quizz = quizzes[idQuizz].title;
+        //     var monSelect = document.getElementById("select");
+        //     var monOption = document.createElement("option");
+        //     monOption.text = quizz;
+        //     monSelect.add(monOption);
+        // }
+    }
+
+    console.log();
+    new URL(location.href).searchParams.get('quizz_id') === null? parse_router('index') : parse_router('quizz')
+
+    
 
 })()
