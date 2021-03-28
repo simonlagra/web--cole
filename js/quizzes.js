@@ -37,8 +37,16 @@
         console.log('quizz')
 
         let quizz_id = new URL(location.href).searchParams.get('quizz_id')
+
+        getQuizz(quizz_id)
+
+        showQuizzTitle(quizz_id)
         
-        timer(3000, () => { console.log(true)})
+        timer(3000, () => { doafter()})
+    }
+
+    let doafter = () => {
+        //afficher le questionnaire
     }
 
     const router = {
@@ -54,8 +62,23 @@
         console.log(quizzes?.[id]?.title)
     }
 
+    let showQuizzTitle = (id) => {
+        let content = `
+            <div class="div">
+                <div class="title">${quizzes?.[id]?.title}</div>
+                <span class="desc">${quizzes?.[id]?.description}</span>
+            </div>
+        `
+        $(".title").append(content)
+    }
+
+    let showQuizzDescription = (id) => {
+        
+    }
+
     let getQuizzDescription = (id) => {
         console.log(quizzes?.[id]?.description)
+        document.write(quizzes?.[id]?.description)
     }
 
     let getQuizz = (id) => {
