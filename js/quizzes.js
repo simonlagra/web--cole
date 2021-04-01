@@ -41,6 +41,8 @@
         getQuizz(quizz_id)
 
         showQuizzTitle(quizz_id)
+
+        showQuizzDescription(quizz_id)
         
         timer(3000, () => { doafter()})
     }
@@ -66,14 +68,19 @@
         let content = `
             <div class="div">
                 <div class="title">${quizzes?.[id]?.title}</div>
-                <span class="desc">${quizzes?.[id]?.description}</span>
+                
             </div>
         `
         $(".title").append(content)
     }
 
     let showQuizzDescription = (id) => {
-        
+        let content = `
+            <div class="div">
+                <span class="desc">${quizzes?.[id]?.description}</span>
+            </div>
+        `
+        $(".desc").append(content)
     }
 
     let getQuizzDescription = (id) => {
