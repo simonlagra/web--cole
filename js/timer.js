@@ -12,15 +12,18 @@ let timer = (delay, callback) => {
 	let countDown = setInterval(() => {
 		
 		$('#countDown').html(counter)
+		console.log(counter)
 
-		if(counter < 0) {
+		if(counter < 1) {
 			clearInterval(countDown)
 			timerdiv.remove()
+
+			typeof(callback) == 'function' ? callback() : undefined
 
 		}
 
 		counter--
 	}, 1000)
 
-	typeof(callback) == 'function' ? callback() : undefined
+	
 }
