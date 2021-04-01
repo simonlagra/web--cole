@@ -18,9 +18,6 @@ let timer = (delay, callback) => {
 			clearInterval(countDown)
 			timerdiv.remove()
 			typeof(callback) == 'function' ? callback() : undefined
-
-			typeof(callback) == 'function' ? callback() : undefined
-
 		}
 
 		counter--

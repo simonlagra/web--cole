@@ -62,13 +62,50 @@
 
         let questions = quizzes?.[args?.[0]]?.data
 
+        let content;
+
         if(questions) {
             for (let k of questions) {
                 console.log(k.question)
+                content = `
+                    <br>
+                    <br>
+                    <br>
+                    <img src="${k.image}">
+                    <br>
+                    <span>${k.question}</span>
+                    <br>
+                    <form>
+                        <div>
+                            <label for="${k.reponses[0]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[0]}" name="${k}" value="${k.reponses[0]}">
+                                <span class="blue-text text-lighten-2">${k.reponses[0]}</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label for="${k.reponses[1]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[1]}" name="${k}" value="${k.reponses[1]}">
+                                <span class="blue-text text-lighten-2">${k.reponses[1]}</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label for="${k.reponses[2]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[2]}" name="${k}" value="${k.reponses[2]}">
+                                <span class="blue-text text-lighten-2">${k.reponses[2]}</span>
+                            </label>
+                        </div>
+                    </form>
+                `
+                $(".question").append(content)
             }
+            $(".question").append(`<button id="button" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light" onClick="reponses()">Vérification</button>`)
         }
 
     }
+
+    
 
     const router = {
         index : indexjs,
@@ -87,7 +124,6 @@
         let content = `
             <div class="div">
                 <div class="title">${quizzes?.[id]?.title}</div>
-                
             </div>
         `
         $(".title").append(content)
@@ -104,18 +140,11 @@
 
     let getQuizzDescription = (id) => {
         console.log(quizzes?.[id]?.description)
-        document.write(quizzes?.[id]?.description)
     }
 
     let getQuizz = (id) => {
         getQuizzTitle(id)
         getQuizzDescription(id)
-    }
-
-    let getAllQuizz = () => {
-        for (let k in quizzes) {
-            console.log(quizzes[k])
-        }
     }
 
     let fillSelect = () => {
@@ -139,3 +168,7 @@
     
 
 })()
+
+let reponses = () => {
+    location.href='resultats.html'
+}

@@ -14,7 +14,7 @@ const questions_mer = [
             "Gus"
         ],
         bonneReponses: [1],
-        image: "mer/img1.jpg"
+        image: "img/mer/img1.jpg"
     },
     {
 
@@ -26,7 +26,7 @@ const questions_mer = [
             "Marin"
         ],
         bonneReponses: [2],
-        image: "mer/img2.jpg"
+        image: "img/mer/img2.jpg"
     },
     {
 
@@ -38,7 +38,7 @@ const questions_mer = [
             "Donie"
         ],
         bonneReponses: [0],
-        image: "mer/img3.jpg"
+        image: "img/mer/img3.jpg"
     },
     {
 
@@ -50,7 +50,7 @@ const questions_mer = [
             "Happy"
         ],
         bonneReponses: [0],
-        image: "mer/img4.jpg"
+        image: "img/mer/img4.jpg"
     },
     {
 
@@ -62,7 +62,7 @@ const questions_mer = [
             "Molly Silver"
         ],
         bonneReponses: [1],
-        image: "mer/img5.jpg"
+        image: "img/mer/img5.jpg"
     },
     {
 
@@ -74,7 +74,7 @@ const questions_mer = [
             "Babyfoot"
         ],
         bonneReponses: [1],
-        image: "mer/img6.jpg"
+        image: "img/mer/img6.jpg"
     },
     {
 
@@ -86,6 +86,6 @@ const questions_mer = [
             "Maurice"
         ],
         bonneReponses: [2],
-        image: "mer/img7.jpg"
+        image: "img/mer/img7.jpg"
     }
 ];
