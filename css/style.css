@@ -65,6 +65,15 @@ main {
     flex: 1 0 auto;
 }
 
+<<<<<<< HEAD
 .brand-logo.center {
     font-size: 1.8rem;
+=======
+.dark-grey {
+    background-color: #36393F !important;
+}
+
+input.select-dropdown.dropdown-trigger {
+    color: #f5f5f5 !important;
+>>>>>>> 36c53f559d8c50550a8dc4efe84ceb2b5619547d
 }
