@@ -14,7 +14,7 @@ const questions_jeux = [
             "Dragon Quest"
         ],
         bonneReponses: [0],
-        image: "jv/img1.jpg"
+        image: "img/jv/img1.jpg"
     },
     {
         id: "id2",
@@ -25,7 +25,7 @@ const questions_jeux = [
             "Silent Hill"
         ],
         bonneReponses: [2],
-        image: "jv/img2.jpg"
+        image: "img/jv/img2.jpg"
     },
     {
         id: "id3",
@@ -36,7 +36,7 @@ const questions_jeux = [
             "Tekken"
         ],
         bonneReponses: [2],
-        image: "jv/img3.jpg"
+        image: "img/jv/img3.jpg"
     },
     {
         id: "id4",
@@ -47,7 +47,7 @@ const questions_jeux = [
             "Final Fantasy"
         ],
         bonneReponses: [1],
-        image: "jv/img4.jpg"
+        image: "img/jv/img4.jpg"
     },
     {
         id: "id5",
@@ -58,7 +58,7 @@ const questions_jeux = [
             "Disney Adventures"
         ],
         bonneReponses: [1],
-        image: "jv/img5.jpg"
+        image: "img/jv/img5.jpg"
     },
     {
         id: "id6",
@@ -69,7 +69,7 @@ const questions_jeux = [
             "Assassin's Creed"
         ],
         bonneReponses: [2],
-        image: "jv/img6.jpg"
+        image: "img/jv/img6.jpg"
     },
     {
 
@@ -81,7 +81,7 @@ const questions_jeux = [
             "Booly"
         ],
         bonneReponses: [0],
-        image: "jv/img7.jpg"
+        image: "img/jv/img7.jpg"
     },
     {
         id: "id8",
@@ -92,6 +92,6 @@ const questions_jeux = [
             "Onimusha"
         ],
         bonneReponses: [1],
-        image: "jv/img8.jpg"
+        image: "img/jv/img8.jpg"
     }
 ];

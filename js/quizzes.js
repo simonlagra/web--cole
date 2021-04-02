@@ -30,7 +30,7 @@
         }
 
     }
-// Exactement comme t'as dit, mais ici =)
+
     let indexjs = () => {
         console.log('index')
         fillSelect()
@@ -50,6 +50,10 @@
         showQuizzDescription(quizz_id)
         
         timer(3000, () => { parseQuizz(quizz_id) })
+    }
+
+    let resultatsjs = () => {
+
     }
 
     /** 
@@ -77,22 +81,22 @@
                     <br>
                     <form>
                         <div>
-                            <label for="${k.reponses[0]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[0]}" name="${k}" value="${k.reponses[0]}">
+                            <label for="${k} réponse 1">
+                                <input class="with-gap" type="radio" id="${k} réponse 1" name="${k}" value="${k.reponses[0]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[0]}</span>
                             </label>
                         </div>
 
                         <div>
-                            <label for="${k.reponses[1]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[1]}" name="${k}" value="${k.reponses[1]}">
+                            <label for="${k} réponse 2">
+                                <input class="with-gap" type="radio" id="${k} réponse 2" name="${k}" value="${k.reponses[1]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[1]}</span>
                             </label>
                         </div>
 
                         <div>
-                            <label for="${k.reponses[2]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[2]}" name="${k}" value="${k.reponses[2]}">
+                            <label for="${k}  réponse 3">
+                                <input class="with-gap" type="radio" id="${k} réponse 3" name="${k}" value="${k.reponses[2]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[2]}</span>
                             </label>
                         </div>
@@ -160,6 +164,10 @@
         //     monOption.text = quizz;
         //     monSelect.add(monOption);
         // }
+    }
+
+    let parseAnswer = () => {
+        $('input[name=radioName]:checked').val();
     }
 
     console.log();

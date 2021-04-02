@@ -15,7 +15,7 @@ const questions_couples = [
             "La Belle au bois dormant"
         ],
         bonneReponses: [1, 2],
-        image: "couples/img1.jpg"
+        image: "img/couples/img1.jpg"
     },
     {
         id: "id2",
@@ -27,7 +27,7 @@ const questions_couples = [
             "Shrek"
         ],
         bonneReponses: [1, 3],
-        image: "couples/img2.jpg"
+        image: "img/couples/img2.jpg"
     },
     {
         id: "id3",
@@ -39,7 +39,7 @@ const questions_couples = [
             "Sarabi"
         ],
         bonneReponses: [1, 2],
-        image: "couples/img3.jpg"
+        image: "img/couples/img3.jpg"
     },
     {
         id: "id4",
@@ -51,7 +51,7 @@ const questions_couples = [
             "Minnie"
         ],
         bonneReponses: [1, 3],
-        image: "couples/img4.jpg"
+        image: "img/couples/img4.jpg"
     },
     {
         id: "id5",
@@ -63,7 +63,7 @@ const questions_couples = [
             "Mulan"
         ],
         bonneReponses: [0, 3],
-        image: "couples/img5.jpg"
+        image: "img/couples/img5.jpg"
     },
     {
         id: "id6",
@@ -75,7 +75,7 @@ const questions_couples = [
             "Belle"
         ],
         bonneReponses: [0, 1],
-        image: "couples/img6.jpg"
+        image: "img/couples/img6.jpg"
     },
     {
         id: "id7",
@@ -87,7 +87,7 @@ const questions_couples = [
             "Antonio"
         ],
         bonneReponses: [0, 1],
-        image: "couples/img7.jpg"
+        image: "img/couples/img7.jpg"
     },
     {
         id: "id8",
@@ -99,6 +99,6 @@ const questions_couples = [
             "Marianne"
         ],
         bonneReponses: [1, 3],
-        image: "couples/img8.jpg"
+        image: "img/couples/img8.jpg"
     }
 ];
