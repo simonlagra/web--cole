@@ -53,9 +53,39 @@
     }
 
     let resultatsjs = () => {
+        console.log('résultats')
 
+        showAnswer(quizz_id)
     }
-
+    
+    const router = {
+        index : indexjs,
+        quizz : quizzjs,
+        resultats : resultatsjs
+    }
+    
+    let parse_router = (id) => {
+        router?.[id]()
+    }
+    
+    let getQuizzTitle = (id) => {
+        console.log(quizzes?.[id]?.title)
+    }
+    
+    let showQuizzTitle = (id) => {
+        let content = `
+                <div class="title">${quizzes?.[id]?.title}</div>
+        `
+        $(".div").append(content)
+    }
+    
+    let showQuizzDescription = (id) => {
+        let content = `
+                <span class="desc">${quizzes?.[id]?.description}</span>
+        `
+        $(".div").append(content)
+    }
+    
     /** 
      *  Parse le quizz pour afficher les questions sur la page :
      **/
@@ -77,69 +107,36 @@
                     <br>
                     <img src="${k.image}">
                     <br>
-                    <span>${k.question}</span>
+                    <span class="question">${k.question}</span>
                     <br>
                     <form>
                         <div>
-                            <label for="${k} réponse 1">
-                                <input class="with-gap" type="radio" id="${k} réponse 1" name="${k}" value="${k.reponses[0]}">
+                            <label for="${k.reponses[0]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[0]}" name="${k}" value="${k.reponses[0]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[0]}</span>
                             </label>
                         </div>
 
                         <div>
-                            <label for="${k} réponse 2">
-                                <input class="with-gap" type="radio" id="${k} réponse 2" name="${k}" value="${k.reponses[1]}">
+                            <label for="${k.reponses[1]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[1]}" name="${k}" value="${k.reponses[1]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[1]}</span>
                             </label>
                         </div>
 
                         <div>
-                            <label for="${k}  réponse 3">
-                                <input class="with-gap" type="radio" id="${k} réponse 3" name="${k}" value="${k.reponses[2]}">
+                            <label for="${k.reponses[2]}">
+                                <input class="with-gap" type="radio" id="${k.reponses[2]}" name="${k}" value="${k.reponses[2]}">
                                 <span class="blue-text text-lighten-2">${k.reponses[2]}</span>
                             </label>
                         </div>
                     </form>
                 `
-                $(".question").append(content)
+                $(".div").append(content)
             }
-            $(".question").append(`<button id="button" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light" onClick="reponses()">Vérification</button>`)
+            $(".div").append(`<button id="verif" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light" onClick="reponses()">Vérification</button>`)
         }
 
-    }
-
-    
-
-    const router = {
-        index : indexjs,
-        quizz : quizzjs
-    }
-
-    let parse_router = (id) => {
-        router?.[id]()
-    }
-
-    let getQuizzTitle = (id) => {
-        console.log(quizzes?.[id]?.title)
-    }
-
-    let showQuizzTitle = (id) => {
-        let content = `
-            <div class="div">
-                <div class="title">${quizzes?.[id]?.title}</div>
-            </div>
-        `
-        $(".title").append(content)
-    }
-
-    let showQuizzDescription = (id) => {
-        let content = `
-            <div class="div">
-                <span class="desc">${quizzes?.[id]?.description}</span>
-            </div>
-        `
-        $(".desc").append(content)
     }
 
     let getQuizzDescription = (id) => {
@@ -157,21 +154,18 @@
             $(`<option id="option_${key}" value="${key}">${quizzes?.[key]?.title}</option>`).appendTo($('#select'));
         }
 
-        // for (const idQuizz in quizzes) {
-        //     const quizz = quizzes[idQuizz].title;
-        //     var monSelect = document.getElementById("select");
-        //     var monOption = document.createElement("option");
-        //     monOption.text = quizz;
-        //     monSelect.add(monOption);
-        // }
     }
 
-    let parseAnswer = () => {
-        $('input[name=radioName]:checked').val();
+    let showAnswer = (id) => {
+        //$('input[name=radioName]:checked').val();
+        let content = `
+            <span class="desc">${quizzes?.[id]?.data?.reponses?.[bonneReponses]}</span>
+        `
+        $(".div").append(content)
     }
 
     console.log();
-    new URL(location.href).searchParams.get('quizz_id') === null? parse_router('index') : parse_router('quizz')
+    new URL(location.href).searchParams.get('quizz_id') === null? parse_router('index') : parse_router('quizz') //ajouter condition sur resultatsjs
 
     
 

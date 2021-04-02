@@ -104,6 +104,10 @@ span.desc{
     background-color: #42a5f5;
 }
 
+span.question{
+    font-size: 1.3rem;
+}
+
 /*[type="radio"].with-gap:checked+label:after {
     background-color: #64b5f6 !important;
 }
