@@ -51,6 +51,10 @@
         
         // timer(3000, () => { parseQuizz(quizz_id) })
         parseQuizz(quizz_id)
+
+        $(".quizz_btn").click = (e) => {
+            e.preventDefault()
+        }
     }
 
     let resultatsjs = () => {
@@ -134,7 +138,7 @@
 
                 for (let reponses in k.reponses) {
                     content += `<div class="">
-                            <label for="${k.id}_${reponses}">
+                            <label class="quizz_label" for="${k.id}_${reponses}">
                                 <input class="with-gap" type="radio" id="${k.id}_${reponses}" name="${k.id}" value="${reponses}">
                                 <span class="blue-text text-lighten-2">${k.reponses[reponses]}</span>
                             </label>
@@ -143,7 +147,7 @@
 
                 content += `</div>`
             }
-            content += `<button id="verif" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light">Vérification</button></form></div></div>`
+            content += `<button id="verif" class="quizz_btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light">Vérification</button></form></div></div>`
         
             $(".div").append(content)
         }
