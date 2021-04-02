@@ -49,13 +49,14 @@
 
         showQuizzDescription(quizz_id)
         
-        timer(3000, () => { parseQuizz(quizz_id) })
+        // timer(3000, () => { parseQuizz(quizz_id) })
+        parseQuizz(quizz_id)
     }
 
     let resultatsjs = () => {
         console.log('résultats')
 
-        showAnswer(quizz_id)
+        // showAnswer(quizz_id)
     }
     
     const router = {
@@ -64,8 +65,30 @@
         resultats : resultatsjs
     }
     
-    let parse_router = (id) => {
-        router?.[id]()
+    let parse_router = () => {
+
+        console.log(true)
+
+        let redirect = "index" 
+        
+        if(location.href.match(/index.html$/i) == null) {
+            for (let route in router) {
+                let regexp = new RegExp(route + ".html", "i")
+                console.log(regexp)
+                console.log(route)
+                console.log(location.href)
+
+                if(regexp.test(location.href) === true) {
+                    redirect = route
+                    break
+                }
+
+            }
+
+        } 
+
+        redirect === null ? router?.["index"]() : router?.[redirect]()
+        
     }
     
     let getQuizzTitle = (id) => {
@@ -99,42 +122,30 @@
         let content;
 
         if(questions) {
+
+            content = `<div class="container"><div class="row"><form id="resultats_form" action="resultats.html">`
+
+            console.log(questions)
+
             for (let k of questions) {
-                console.log(k.question)
-                content = `
-                    <br>
-                    <br>
-                    <br>
-                    <img src="${k.image}">
-                    <br>
-                    <span class="question">${k.question}</span>
-                    <br>
-                    <form>
-                        <div>
-                            <label for="${k.reponses[0]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[0]}" name="${k}" value="${k.reponses[0]}">
-                                <span class="blue-text text-lighten-2">${k.reponses[0]}</span>
-                            </label>
-                        </div>
+                content += `<div class="question-img col s10 offset-s1"><img src="${k.image}">
+                    <div class="question-title"><span class="question">${k.question}</span></div>
+                    `
 
-                        <div>
-                            <label for="${k.reponses[1]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[1]}" name="${k}" value="${k.reponses[1]}">
-                                <span class="blue-text text-lighten-2">${k.reponses[1]}</span>
+                for (let reponses in k.reponses) {
+                    content += `<div class="">
+                            <label for="${k.id}_${reponses}">
+                                <input class="with-gap" type="radio" id="${k.id}_${reponses}" name="${k.id}" value="${reponses}">
+                                <span class="blue-text text-lighten-2">${k.reponses[reponses]}</span>
                             </label>
-                        </div>
+                        </div>`
+                }
 
-                        <div>
-                            <label for="${k.reponses[2]}">
-                                <input class="with-gap" type="radio" id="${k.reponses[2]}" name="${k}" value="${k.reponses[2]}">
-                                <span class="blue-text text-lighten-2">${k.reponses[2]}</span>
-                            </label>
-                        </div>
-                    </form>
-                `
-                $(".div").append(content)
+                content += `</div>`
             }
-            $(".div").append(`<button id="verif" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light" onClick="reponses()">Vérification</button>`)
+            content += `<button id="verif" class="btn blue lighten-1 grey-text text-darken-3 waves-effect waves-light">Vérification</button></form></div></div>`
+        
+            $(".div").append(content)
         }
 
     }
@@ -164,13 +175,12 @@
         $(".div").append(content)
     }
 
-    console.log();
-    new URL(location.href).searchParams.get('quizz_id') === null? parse_router('index') : parse_router('quizz') //ajouter condition sur resultatsjs
+    console.log(new URL(location.href));
+
+
+
+    parse_router()
 
     
 
 })()
-
-let reponses = () => {
-    location.href='resultats.html'
-}
